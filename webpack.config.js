@@ -8,7 +8,8 @@ module.exports = {
     filename: "main.js",     //название выходного файла
   },
      module: {
-    rules: [{ test: /\.txt$/, use: 'raw-loader' }],
+    rules: [{ test: /\.txt$/, use: 'raw-loader' },{ test: /\.css$/, use: 'css-loader' },
+      { test: /\.ts$/, use: 'ts-loader' },],
   },
      devServer: {   // натройки сервака
     static: {
