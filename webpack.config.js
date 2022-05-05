@@ -9,7 +9,17 @@ module.exports = {
   },
      module: {
     rules: [{ test: /\.txt$/, use: 'raw-loader' },{ test: /\.css$/, use: 'css-loader' },
-      { test: /\.ts$/, use: 'ts-loader' },],
+         { test: /\.ts$/, use: 'ts-loader' },
+       {
+        test: /\.m?js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ['@babel/preset-env']
+          }
+        }
+      }],
   },
      devServer: {   // натройки сервака
     static: {
